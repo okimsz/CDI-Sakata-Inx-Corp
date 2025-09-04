@@ -12,12 +12,12 @@ app.use(express.json());
 // Serve static files from uploads directory
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
-// Also serve from public directory for existing images
-app.use(express.static(path.join(__dirname, '../public')));
+// Also serve from frontend public directory for existing images
+app.use('/public', express.static(path.join(__dirname, '../frontend/public/public')));
 
 // Log static file setup
 console.log('📁 Static files from:', path.join(__dirname, 'public/uploads'));
-console.log('📁 Public files from:', path.join(__dirname, '../public'));
+console.log('📁 Frontend public files from:', path.join(__dirname, '../frontend/public/public'));
 
 console.log('🚀 Starting server with router structure...');
 
